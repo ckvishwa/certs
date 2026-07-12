@@ -1,59 +1,50 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { classifyMistake } from "@/lib/learning/mistake-classify";
 
 describe("classifyMistake", () => {
-  it("treats confidently-wrong as a misconception (CONFUSION)", () => {
+  it("classifies a known prerequisite gap before weaker heuristics", () => {
+    expect(
+      classifyMistake({
+        priorState: "LEARNING",
+        priorMastery: 0.5,
+        confidence: "CERTAIN",
+        hasPrerequisiteGap: true,
+      }),
+    ).toBe("PREREQUISITE_GAP");
+  });
+
+  it("treats confidently wrong as concept confusion", () => {
     expect(
       classifyMistake({
         priorState: "LEARNING",
         priorMastery: 0.5,
         confidence: "CERTAIN",
       }),
-    ).toBe("CONFUSION");
+    ).toBe("CONCEPT_CONFUSION");
   });
 
-  it("classifies a forgotten mastered concept as MEMORY_FAILURE", () => {
-    expect(
-      classifyMistake({ priorState: "MASTERED", priorMastery: 0.9 }),
-    ).toBe("MEMORY_FAILURE");
-  });
-
-  it("classifies an unseen/low-mastery concept as KNOWLEDGE_GAP", () => {
+  it("classifies an unseen or low-mastery concept as a knowledge gap", () => {
     expect(classifyMistake({ priorState: "UNSEEN", priorMastery: 0 })).toBe(
       "KNOWLEDGE_GAP",
     );
-    expect(
-      classifyMistake({ priorState: "LEARNING", priorMastery: 0.1 }),
-    ).toBe("KNOWLEDGE_GAP");
+    expect(classifyMistake({ priorState: "LEARNING", priorMastery: 0.1 })).toBe(
+      "KNOWLEDGE_GAP",
+    );
   });
 
-  it("classifies command questions with decent mastery as COMMAND_SYNTAX", () => {
-    expect(
-      classifyMistake({
-        priorState: "RECALLING",
-        priorMastery: 0.6,
-        questionKind: "COMMAND",
-      }),
-    ).toBe("COMMAND_SYNTAX");
-  });
-
-  it("flags very fast wrong answers as READING_ERROR", () => {
+  it("uses keyword trap only for a very fast incorrect response", () => {
     expect(
       classifyMistake({
         priorState: "RECALLING",
         priorMastery: 0.6,
         responseMs: 1500,
       }),
-    ).toBe("READING_ERROR");
+    ).toBe("KEYWORD_TRAP");
   });
 
-  it("flags very slow wrong answers as TIME_PRESSURE", () => {
+  it("leaves insufficient classification evidence unclassified", () => {
     expect(
-      classifyMistake({
-        priorState: "RECALLING",
-        priorMastery: 0.6,
-        responseMs: 120000,
-      }),
-    ).toBe("TIME_PRESSURE");
+      classifyMistake({ priorState: "RECALLING", priorMastery: 0.6 }),
+    ).toBeNull();
   });
 });

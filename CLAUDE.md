@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Product
 
-CERTFORGE AI — an adaptive certification exam-prep platform (Cisco CCNA 200-301,
+The application is an adaptive certification exam-prep platform (Cisco CCNA 200-301,
 CompTIA Security+ SY0-701). It is **not** a course library: the core job is to
 model per-concept mastery/retention/confusion and prescribe what to study next.
 See `docs/PRODUCT.md` and the non-negotiable principles there before making

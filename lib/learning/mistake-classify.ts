@@ -1,21 +1,20 @@
 import type {
   ConfidenceLevel,
   LearnerState,
+  MistakeTaxonomy,
   MistakeType,
   QuestionKind,
 } from "@/lib/types/database";
 
 /**
- * Heuristic mistake classifier (§17). Turns a wrong answer into a typed cause so
- * the dashboard can say WHY the learner is missing questions, not just that they
- * are. Some causes (CALCULATION, OVERTHINKING) need answer-content analysis and
- * are deferred to later slices; this covers the confidently-diagnosable cases.
+ * Conservative classifier for signals the application can support directly.
+ * Returning null is intentional: a missing classification is safer than an
+ * invented cause, and the heatmap excludes unclassified attempts.
  */
 export const CLASSIFY_CONFIG = {
   fastMs: 4000, // faster than this on a wrong answer ⇒ likely misread
   slowMs: 90000, // slower than this ⇒ likely time pressure
   knowledgeGapMastery: 0.2,
-  commandMinMastery: 0.4,
 } as const;
 
 export interface MistakeSignals {
@@ -24,21 +23,15 @@ export interface MistakeSignals {
   responseMs?: number | null;
   confidence?: ConfidenceLevel | null;
   questionKind?: QuestionKind;
+  hasPrerequisiteGap?: boolean;
 }
 
-export function classifyMistake(s: MistakeSignals): MistakeType {
+export function classifyMistake(s: MistakeSignals): MistakeTaxonomy | null {
   const c = CLASSIFY_CONFIG;
 
-  // Confidently wrong is the highest-signal case: a genuine misconception.
-  if (s.confidence === "CERTAIN") return "CONFUSION";
-
-  // Command syntax errors when the concept is otherwise understood.
-  if (s.questionKind === "COMMAND" && s.priorMastery >= c.commandMinMastery)
-    return "COMMAND_SYNTAX";
-
-  // Previously known, now missed ⇒ forgetting.
-  if (s.priorState === "MASTERED" || s.priorState === "DECAYING")
-    return "MEMORY_FAILURE";
+  if (s.hasPrerequisiteGap) return "PREREQUISITE_GAP";
+  if (s.confidence === "CERTAIN") return "CONCEPT_CONFUSION";
+  if (s.responseMs != null && s.responseMs < c.fastMs) return "KEYWORD_TRAP";
 
   // Never really learned it.
   if (
@@ -48,15 +41,16 @@ export function classifyMistake(s: MistakeSignals): MistakeType {
   )
     return "KNOWLEDGE_GAP";
 
-  if (s.responseMs != null && s.responseMs < c.fastMs) return "READING_ERROR";
-  if (s.responseMs != null && s.responseMs > c.slowMs) return "TIME_PRESSURE";
-
-  return "KNOWLEDGE_GAP";
+  return null;
 }
 
 /** Human-readable labels for the dashboard. */
 export const MISTAKE_LABELS: Record<MistakeType, string> = {
   KNOWLEDGE_GAP: "Knowledge gap",
+  CONCEPT_CONFUSION: "Concept confusion",
+  SCOPE_ERROR: "Scope error",
+  KEYWORD_TRAP: "Keyword trap",
+  PREREQUISITE_GAP: "Prerequisite gap",
   MEMORY_FAILURE: "Memory failure",
   CONFUSION: "Confusion",
   READING_ERROR: "Reading error",

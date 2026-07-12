@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { signOut } from "@/app/(auth)/actions";
+import { BrandMark } from "@/components/app/brand-mark";
+import { brand } from "@/lib/brand";
 
 interface NavItem {
   href: string;
@@ -26,7 +28,12 @@ interface NavItem {
 
 const NAV: NavItem[] = [
   { href: "/today", label: "Today", icon: LayoutDashboard, ready: true },
-  { href: "/knowledge-map", label: "Knowledge Map", icon: Network, ready: true },
+  {
+    href: "/knowledge-map",
+    label: "Knowledge Map",
+    icon: Network,
+    ready: true,
+  },
   { href: "/learn", label: "Learn", icon: BookOpen, ready: false },
   { href: "/review", label: "Review", icon: Repeat, ready: false },
   { href: "/practice", label: "Practice", icon: Target, ready: false },
@@ -36,22 +43,8 @@ const NAV: NavItem[] = [
   { href: "/library", label: "Library", icon: Library, ready: false },
 ];
 
-function Brand({ className }: { className?: string }) {
-  return (
-    <span className={cn("flex items-center gap-2", className)}>
-      <span className="font-mono text-base font-bold tracking-tight text-primary">
-        CERTFORGE
-      </span>
-      <span className="rounded bg-primary/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-primary">
-        AI
-      </span>
-    </span>
-  );
-}
-
 function useActive(pathname: string) {
-  return (href: string) =>
-    pathname === href || pathname.startsWith(`${href}/`);
+  return (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 }
 
 export function Sidebar({ displayName }: { displayName: string }) {
@@ -61,10 +54,10 @@ export function Sidebar({ displayName }: { displayName: string }) {
   return (
     <>
       {/* Mobile top bar */}
-      <header className="flex items-center gap-3 border-b border-border bg-card/40 px-4 py-2 md:hidden">
-        <Brand />
+      <header className="border-border bg-card/40 flex items-center gap-3 border-b px-4 py-2 md:hidden">
+        <BrandMark />
         <nav
-          aria-label="Primary"
+          aria-label={`${brand.shortName} primary navigation`}
           className="flex flex-1 items-center gap-1 overflow-x-auto"
         >
           {NAV.filter((i) => i.ready).map((item) => {
@@ -78,7 +71,7 @@ export function Sidebar({ displayName }: { displayName: string }) {
                 className={cn(
                   "flex shrink-0 items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs transition-colors",
                   active
-                    ? "bg-primary/15 font-medium text-primary"
+                    ? "bg-primary/15 text-primary font-medium"
                     : "text-foreground/80 hover:bg-accent",
                 )}
               >
@@ -92,7 +85,7 @@ export function Sidebar({ displayName }: { displayName: string }) {
           <button
             type="submit"
             aria-label="Sign out"
-            className="flex items-center rounded-md p-2 text-foreground/80 transition-colors hover:bg-accent"
+            className="text-foreground/80 hover:bg-accent flex items-center rounded-md p-2 transition-colors"
           >
             <LogOut className="size-4" />
           </button>
@@ -100,13 +93,13 @@ export function Sidebar({ displayName }: { displayName: string }) {
       </header>
 
       {/* Desktop sidebar */}
-      <aside className="hidden w-60 shrink-0 flex-col border-r border-border bg-card/40 md:flex">
-        <div className="flex h-14 items-center border-b border-border px-4">
-          <Brand />
+      <aside className="border-border bg-card/40 hidden w-60 shrink-0 flex-col border-r md:flex">
+        <div className="border-border flex h-14 items-center border-b px-4">
+          <BrandMark />
         </div>
 
         <nav
-          aria-label="Primary"
+          aria-label={`${brand.shortName} primary navigation`}
           className="flex-1 space-y-0.5 overflow-y-auto p-2"
         >
           {NAV.map((item) => {
@@ -116,14 +109,14 @@ export function Sidebar({ displayName }: { displayName: string }) {
               return (
                 <div
                   key={item.href}
-                  className="flex items-center justify-between rounded-md px-3 py-2 text-sm text-muted-foreground/50"
+                  className="text-muted-foreground/50 flex items-center justify-between rounded-md px-3 py-2 text-sm"
                   title="Coming in a later slice"
                 >
                   <span className="flex items-center gap-3">
                     <Icon className="size-4" />
                     {item.label}
                   </span>
-                  <span className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium">
+                  <span className="bg-muted rounded px-1.5 py-0.5 text-[10px] font-medium">
                     soon
                   </span>
                 </div>
@@ -137,7 +130,7 @@ export function Sidebar({ displayName }: { displayName: string }) {
                 className={cn(
                   "flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
                   active
-                    ? "bg-primary/15 font-medium text-primary"
+                    ? "bg-primary/15 text-primary font-medium"
                     : "text-foreground/80 hover:bg-accent hover:text-foreground",
                 )}
               >
@@ -148,17 +141,17 @@ export function Sidebar({ displayName }: { displayName: string }) {
           })}
         </nav>
 
-        <div className="border-t border-border p-2">
-          <div className="px-3 py-2 text-xs text-muted-foreground">
+        <div className="border-border border-t p-2">
+          <div className="text-muted-foreground px-3 py-2 text-xs">
             Signed in as
-            <div className="truncate font-medium text-foreground">
+            <div className="text-foreground truncate font-medium">
               {displayName}
             </div>
           </div>
           <form action={signOut}>
             <button
               type="submit"
-              className="flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
+              className="text-foreground/80 hover:bg-accent hover:text-foreground flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors"
             >
               <LogOut className="size-4" />
               Sign out

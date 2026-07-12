@@ -11,16 +11,10 @@
 
 // --- Enums -----------------------------------------------------------------
 export type ContentSource =
-  | "CURATED"
-  | "AI_GENERATED"
-  | "USER_UPLOADED"
-  | "DERIVED_FROM_DOCUMENT";
+  "CURATED" | "AI_GENERATED" | "USER_UPLOADED" | "DERIVED_FROM_DOCUMENT";
 
 export type VerificationStatus =
-  | "DRAFT"
-  | "AI_REVIEWED"
-  | "HUMAN_REVIEWED"
-  | "VERIFIED";
+  "DRAFT" | "AI_REVIEWED" | "HUMAN_REVIEWED" | "VERIFIED";
 
 export type LearnerState =
   | "UNSEEN"
@@ -34,11 +28,7 @@ export type LearnerState =
   | "NEEDS_RESCUE";
 
 export type CognitiveSkill =
-  | "REMEMBER"
-  | "UNDERSTAND"
-  | "APPLY"
-  | "ANALYZE"
-  | "TROUBLESHOOT";
+  "REMEMBER" | "UNDERSTAND" | "APPLY" | "ANALYZE" | "TROUBLESHOOT";
 
 export type QuestionKind =
   | "SINGLE"
@@ -52,6 +42,10 @@ export type QuestionKind =
 
 export type MistakeType =
   | "KNOWLEDGE_GAP"
+  | "CONCEPT_CONFUSION"
+  | "SCOPE_ERROR"
+  | "KEYWORD_TRAP"
+  | "PREREQUISITE_GAP"
   | "MEMORY_FAILURE"
   | "CONFUSION"
   | "READING_ERROR"
@@ -59,6 +53,13 @@ export type MistakeType =
   | "CALCULATION"
   | "OVERTHINKING"
   | "TIME_PRESSURE";
+
+export type MistakeTaxonomy =
+  | "KNOWLEDGE_GAP"
+  | "CONCEPT_CONFUSION"
+  | "SCOPE_ERROR"
+  | "KEYWORD_TRAP"
+  | "PREREQUISITE_GAP";
 
 export type ConfidenceLevel = "GUESSING" | "UNSURE" | "FAIRLY_SURE" | "CERTAIN";
 

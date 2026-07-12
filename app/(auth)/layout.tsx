@@ -1,4 +1,9 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { BrandMark } from "@/components/app/brand-mark";
+import { brand } from "@/lib/brand";
+
+export const metadata: Metadata = { title: "Account" };
 
 export default function AuthLayout({
   children,
@@ -9,16 +14,11 @@ export default function AuthLayout({
     <div className="flex min-h-screen flex-col items-center justify-center px-4 py-12">
       <div className="w-full max-w-sm">
         <Link href="/" className="mb-8 flex items-center justify-center gap-2">
-          <span className="font-mono text-lg font-bold tracking-tight text-primary">
-            CERTFORGE
-          </span>
-          <span className="rounded bg-primary/15 px-1.5 py-0.5 font-mono text-xs font-semibold text-primary">
-            AI
-          </span>
+          <BrandMark className="text-lg" />
         </Link>
         {children}
-        <p className="mt-8 text-center text-xs text-muted-foreground">
-          Learn → Recall → Apply → Test → Pass
+        <p className="text-muted-foreground mt-8 text-center text-xs">
+          {brand.tagline}
         </p>
       </div>
     </div>

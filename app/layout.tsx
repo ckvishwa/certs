@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { brand } from "@/lib/brand";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CERTFORGE AI",
-  description:
-    "Adaptive certification exam-prep. Learn → Recall → Apply → Test → Pass.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  ),
+  applicationName: brand.name,
+  title: {
+    default: brand.name,
+    template: `%s | ${brand.shortName}`,
+  },
+  description: brand.description,
+  openGraph: {
+    type: "website",
+    siteName: brand.name,
+    title: brand.name,
+    description: brand.description,
+  },
+  twitter: {
+    card: "summary",
+    title: brand.name,
+    description: brand.description,
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +46,7 @@ export default function RootLayout({
       lang="en"
       className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }

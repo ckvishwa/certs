@@ -1,6 +1,6 @@
 # SECURITY
 
-Treat CERTFORGE as production software.
+Treat the application as production software.
 
 ## Authentication & authorization
 

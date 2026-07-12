@@ -1,7 +1,7 @@
 # SETUP
 
-Steps to run CERTFORGE AI locally end-to-end. Code is complete for Slice 1; these
-steps require your hosted Supabase project + an OpenAI key.
+Steps to run the application locally end-to-end. These steps require the hosted
+Supabase project. AI remains frozen and no AI credential is required.
 
 ## 1. Create a Supabase project
 
@@ -15,13 +15,12 @@ steps require your hosted Supabase project + an OpenAI key.
 cp .env.example .env.local
 ```
 
-Fill in (Foundation needs no AI key):
+Fill in:
 
 - `NEXT_PUBLIC_SUPABASE_URL` — Project URL
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` — publishable key (browser-safe)
 - `SUPABASE_SERVICE_ROLE_KEY` — server-only; used ONLY by the local seed script
-- `AI_PROVIDER` / `OPENAI_API_KEY` — not required for the Foundation slice (the AI
-  feature is present but frozen).
+- AI variables are optional and must remain unset while the AI feature is frozen.
 
 ## 3. Apply the schema
 
@@ -60,8 +59,8 @@ npm run dev
 ```
 
 Then: sign up → onboarding (pick CCNA v1.1) → **Today** → **Knowledge Map**.
-On the Knowledge Map, click **Explain** on any concept to exercise the live AI
-pipeline (writes a row to `ai_generations`).
+The Knowledge Map exposes mastery and dependency views. AI actions are not
+available while the feature is frozen.
 
 ## 6. Verify RLS (optional)
 

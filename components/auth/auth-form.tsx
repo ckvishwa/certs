@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import type { AuthActionState } from "@/app/(auth)/actions";
+import { brand } from "@/lib/brand";
 
 type Action = (
   prev: AuthActionState,
@@ -56,7 +57,7 @@ export function AuthForm({
         </CardTitle>
         <CardDescription>
           {isSignUp
-            ? "Start forging your certification readiness."
+            ? `Start building your certification readiness with ${brand.shortName}.`
             : "Sign in to continue your study plan."}
         </CardDescription>
       </CardHeader>
@@ -102,7 +103,7 @@ export function AuthForm({
           {state.error ? (
             <p
               role="alert"
-              className="rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-sm text-destructive"
+              className="border-destructive/40 bg-destructive/10 text-destructive rounded-md border px-3 py-2 text-sm"
             >
               {state.error}
             </p>
@@ -111,7 +112,7 @@ export function AuthForm({
           {notice ? (
             <p
               role="status"
-              className="rounded-md border border-primary/40 bg-primary/10 px-3 py-2 text-sm text-primary"
+              className="border-primary/40 bg-primary/10 text-primary rounded-md border px-3 py-2 text-sm"
             >
               {notice}
             </p>
@@ -120,11 +121,13 @@ export function AuthForm({
           <SubmitButton label={isSignUp ? "Create account" : "Sign in"} />
         </form>
 
-        <p className="mt-6 text-center text-sm text-muted-foreground">
-          {isSignUp ? "Already have an account? " : "New to CERTFORGE? "}
+        <p className="text-muted-foreground mt-6 text-center text-sm">
+          {isSignUp
+            ? "Already have an account? "
+            : `New to ${brand.shortName}? `}
           <Link
             href={isSignUp ? "/sign-in" : "/sign-up"}
-            className="font-medium text-primary hover:underline"
+            className="text-primary font-medium hover:underline"
           >
             {isSignUp ? "Sign in" : "Create one"}
           </Link>

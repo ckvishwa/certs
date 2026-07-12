@@ -1,6 +1,6 @@
 # PRODUCT
 
-## What CERTFORGE AI is
+## What the product is
 
 An adaptive exam-preparation operating system. It continuously determines what
 the learner knows, doesn't know, has forgotten, and repeatedly confuses — then

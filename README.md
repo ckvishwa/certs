@@ -1,14 +1,18 @@
-# CERTFORGE AI
+# Certification Prep
 
-**Learn → Recall → Apply → Test → Pass.**
+> Temporary descriptive product name. The final brand is pending; runtime copy
+> is centralized in [`lib/brand.ts`](lib/brand.ts).
 
-An adaptive certification exam-prep platform — not a course library. CERTFORGE
+**Learn. Recall. Apply. Test. Pass.**
+
+An adaptive certification exam-prep platform — not a course library. The app
 continuously models what you know, what you've forgotten, and what you confuse,
 then tells you exactly what to study next. Initial certifications: **Cisco CCNA
 (200-301 v1.1)** and **CompTIA Security+ (SY0-701)**.
 
-> Status: **Phase 1 MVP** — Slices 1 (Foundation) & 2 (Quiz engine + error log)
-> code-complete; runtime verification pending Supabase/OpenAI credentials. See
+> Status: **Phase 1 MVP** — Security+ syllabus, learner model, objective mastery,
+> and classified-mistake visualizations are implemented. Quiz and AI routes
+> remain frozen. See
 > [`docs/ROADMAP.md`](docs/ROADMAP.md) and [`docs/SETUP.md`](docs/SETUP.md).
 
 ## Stack
@@ -17,14 +21,14 @@ then tells you exactly what to study next. Initial certifications: **Cisco CCNA
 - Tailwind CSS v4 + local shadcn-style UI primitives
 - Supabase (Postgres + Auth + Storage) with Row-Level Security
 - Zod validation at every boundary
-- AI provider abstraction (OpenAI default, Anthropic swappable)
+- Dormant AI provider abstraction (feature remains frozen)
 - Vitest + React Testing Library (unit), Playwright (E2E)
 
 ## Getting started
 
 ```bash
 npm install
-cp .env.example .env.local   # fill in Supabase + OpenAI keys
+cp .env.example .env.local   # fill in Supabase values
 npm run dev
 ```
 

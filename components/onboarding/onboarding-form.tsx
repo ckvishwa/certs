@@ -12,8 +12,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { completeOnboarding, type OnboardingState } from "@/app/onboarding/actions";
+import {
+  completeOnboarding,
+  type OnboardingState,
+} from "@/app/onboarding/actions";
 import type { CertOption } from "@/lib/db/certifications";
+import { brand } from "@/lib/brand";
 
 const selectClass =
   "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
@@ -52,7 +56,8 @@ export function OnboardingForm({ certs }: { certs: CertOption[] }) {
       <CardHeader>
         <CardTitle className="text-2xl">Set up your study plan</CardTitle>
         <CardDescription>
-          CERTFORGE builds an adaptive plan from this. You can change it later.
+          {brand.shortName} builds an adaptive plan from this. You can change it
+          later.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -155,7 +160,7 @@ export function OnboardingForm({ certs }: { certs: CertOption[] }) {
           {state.error ? (
             <p
               role="alert"
-              className="rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-sm text-destructive"
+              className="border-destructive/40 bg-destructive/10 text-destructive rounded-md border px-3 py-2 text-sm"
             >
               {state.error}
             </p>
