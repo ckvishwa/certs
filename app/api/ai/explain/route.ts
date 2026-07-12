@@ -6,10 +6,22 @@ import { explainConcept } from "@/lib/ai/services/explain-concept";
 const bodySchema = z.object({ conceptId: z.string().uuid() });
 
 /**
+ * AI is frozen for the current release (not linked from navigation). This
+ * route stays in the codebase for the future AI slice but must not be
+ * directly callable in the meantime — no auth check, Supabase call, or AI
+ * provider should even be reached. Flip to `true` when the AI slice unfreezes.
+ */
+const AI_FEATURES_ENABLED = false;
+
+/**
  * Vertical proof of the AI pipeline: authenticated user requests a structured,
  * multi-mode explanation of a concept. Auth + data access respect RLS.
  */
 export async function POST(request: Request) {
+  if (!AI_FEATURES_ENABLED) {
+    return NextResponse.json({ error: "Not found" }, { status: 404 });
+  }
+
   const supabase = await createClient();
   const {
     data: { user },
