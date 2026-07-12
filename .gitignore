@@ -54,3 +54,4 @@ supabase/.temp
 supabase/.branches
 
 .env*.local
+docs/sources/*.pdf

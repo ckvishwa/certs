@@ -61,6 +61,16 @@ frozen. Env access is centralized in `lib/env.ts` — `publicEnv` (client-safe) 
 `process.env` directly, so missing vars fail with a clear error instead of `undefined`
 propagating silently.
 
+**Gotcha:** `vercel env pull .env.local` overwrites the whole file with only
+`VERCEL_OIDC_TOKEN` if the three `NEXT_PUBLIC_*` vars aren't set in that Vercel
+environment's scope — it silently wipes a working `.env.local`. If `npm run dev`
+suddenly throws "Missing required environment variable", check `.env.local`'s
+contents (var *names* only, never print values) before assuming app code broke.
+
+Production is deployed at `https://certs-eosin.vercel.app` (Vercel project
+`ckvishwas-projects/certs`, GitHub `ckvishwa/certs`, auto-deploys on push to
+`main`). Hosted Supabase project ref: `pgraoxeqsxplbishwkfg`.
+
 ## Next.js 16 gotchas (this is NOT the Next.js in your training data)
 
 - Middleware is renamed to **`proxy`**: the root file is `proxy.ts` exporting a
@@ -129,13 +139,42 @@ Full detail in `docs/ARCHITECTURE.md`. Big picture:
   sub_objective → concept`, plus `concept_dependencies` (the knowledge graph).
   Never flatten it. Every versioned row carries `exam_version_id` so v1.1/v2.0
   content never mixes. `learner_concept_state` is one row per (user, concept) and
-  holds the full learner model + derived `state` enum.
+  holds the full learner model + derived `state` enum. `sub_objectives` are
+  populated only where the *official* source document has a genuinely distinct
+  grouped area (see `supabase/seed/data.mts`'s `SeedObjective.subObjectives`) —
+  never create one per nested bullet or per acronym. The Knowledge Map currently
+  renders concepts flat under their objective regardless of `sub_objective_id`
+  (deliberate — adding a nested UI tier was assessed as unnecessary the last time
+  objective count grew; revisit only if that assessment changes).
 
-- **Feature gating in nav:** `components/app/sidebar.tsx` marks each nav item
-  `ready: boolean`. Routes that exist in code but aren't part of the currently
-  verified vertical slice (Practice, Mistakes, Mock Exams as of Slice 1) render as
-  disabled/greyed rather than being deleted or linked. When unfreezing a slice,
-  flip its `ready` flag rather than restructuring the sidebar.
+- **Syllabus content must trace to an official source.** Objective codes,
+  titles, domain weights come from the vendor's own exam objectives document,
+  never AI memory, blogs, or third-party training material. Official PDFs live
+  in `docs/sources/` (gitignored, not committed — see that directory for
+  provenance notes on which file is canonical vs explicitly excluded for a given
+  cert/version). Every seed content change should be checked against
+  `tests/unit/syllabus-integrity.test.ts`, which validates structural invariants
+  (domain weights sum to 100, exact expected objective codes, no duplicate
+  slugs/codes, no dependency cycles, CCNA/Security+ isolation) directly against
+  `supabase/seed/data.mts` — no database required to run it.
+
+- **Seed data module is `.mts` and lives outside `app`/`lib`:** importing
+  `supabase/seed/data.mts` from a test requires the explicit `.mts` extension
+  (`@/supabase/seed/data.mts`), which needs `allowImportingTsExtensions: true` in
+  `tsconfig.json` (already set) — extensionless imports of `.mts` files do not
+  resolve under this project's `moduleResolution: bundler` setup the way `.ts`
+  imports do.
+
+- **Feature gating, two layers:** `lib/features.ts` (`FEATURES.quiz`,
+  `FEATURES.ai`) is the actual server-side gate — frozen pages
+  (`app/(app)/practice`, `app/(app)/mistakes`) `redirect("/today")` and the
+  frozen API route (`app/api/ai/explain`) returns `404`, both as the *first*
+  line of the handler, before touching auth/Supabase/any provider. This means a
+  frozen surface is unreachable even by direct URL, not just hidden from nav.
+  `components/app/sidebar.tsx`'s per-item `ready: boolean` is the separate
+  nav-hiding layer. When unfreezing a slice, flip **both** — the `FEATURES` flag
+  and the sidebar's `ready` flag — flipping only one leaves either a reachable-
+  but-unlinked page or a linked-but-blocked one.
 
 ## Conventions
 

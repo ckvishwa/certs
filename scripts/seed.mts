@@ -9,6 +9,7 @@ import {
   seedCertifications,
   conceptDependencies,
   seedQuestions,
+  type SeedConcept,
 } from "../supabase/seed/data.mts";
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -39,7 +40,7 @@ async function upsert<T extends Record<string, unknown>>(
 }
 
 async function main() {
-  const counts = { certs: 0, versions: 0, domains: 0, objectives: 0, concepts: 0, deps: 0, questions: 0 };
+  const counts = { certs: 0, versions: 0, domains: 0, objectives: 0, subObjectives: 0, concepts: 0, deps: 0, questions: 0 };
 
   for (const cert of seedCertifications) {
     const certId = await upsert(
@@ -99,12 +100,16 @@ async function main() {
           );
           counts.objectives++;
 
-          for (let c = 0; c < (obj.concepts?.length ?? 0); c++) {
-            const concept = obj.concepts![c];
+          const upsertConcept = async (
+            concept: SeedConcept,
+            position: number,
+            subObjectiveId: string | null,
+          ) => {
             const conceptId = await upsert(
               "concepts",
               {
                 objective_id: objectiveId,
+                sub_objective_id: subObjectiveId,
                 exam_version_id: versionId,
                 slug: concept.slug,
                 name: concept.name,
@@ -112,13 +117,42 @@ async function main() {
                 is_placeholder: concept.placeholder ?? false,
                 source: "CURATED",
                 verification_status: "DRAFT",
-                position: c,
+                position,
               },
               "exam_version_id,slug",
             );
             conceptIds[concept.slug] = conceptId;
             conceptObjectiveIds[concept.slug] = objectiveId;
             counts.concepts++;
+          };
+
+          // Meaningful official bullet groups (sub_objectives), each with its
+          // own concepts. Not created per nested bullet — only where the seed
+          // data explicitly defines a grouping.
+          for (let s = 0; s < (obj.subObjectives?.length ?? 0); s++) {
+            const sub = obj.subObjectives![s];
+            const subObjectiveId = await upsert(
+              "sub_objectives",
+              {
+                objective_id: objectiveId,
+                exam_version_id: versionId,
+                code: sub.code,
+                title: sub.title,
+                is_placeholder: false,
+                position: s,
+              },
+              "objective_id,code",
+            );
+            counts.subObjectives++;
+
+            for (let c = 0; c < (sub.concepts?.length ?? 0); c++) {
+              await upsertConcept(sub.concepts![c], c, subObjectiveId);
+            }
+          }
+
+          // Concepts attached directly to the objective (no sub-grouping).
+          for (let c = 0; c < (obj.concepts?.length ?? 0); c++) {
+            await upsertConcept(obj.concepts![c], c, null);
           }
         }
       }
