@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CERTFORGE AI
 
-## Getting Started
+**Learn → Recall → Apply → Test → Pass.**
 
-First, run the development server:
+An adaptive certification exam-prep platform — not a course library. CERTFORGE
+continuously models what you know, what you've forgotten, and what you confuse,
+then tells you exactly what to study next. Initial certifications: **Cisco CCNA
+(200-301 v1.1)** and **CompTIA Security+ (SY0-701)**.
+
+> Status: **Phase 1 MVP** — Slices 1 (Foundation) & 2 (Quiz engine + error log)
+> code-complete; runtime verification pending Supabase/OpenAI credentials. See
+> [`docs/ROADMAP.md`](docs/ROADMAP.md) and [`docs/SETUP.md`](docs/SETUP.md).
+
+## Stack
+
+- Next.js 16 (App Router) + React 19, TypeScript strict
+- Tailwind CSS v4 + local shadcn-style UI primitives
+- Supabase (Postgres + Auth + Storage) with Row-Level Security
+- Zod validation at every boundary
+- AI provider abstraction (OpenAI default, Anthropic swappable)
+- Vitest + React Testing Library (unit), Playwright (E2E)
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # fill in Supabase + OpenAI keys
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then apply the database schema to your Supabase project (see
+[`docs/DATA_MODEL.md`](docs/DATA_MODEL.md) and `supabase/migrations/`) and seed the
+syllabus (`npm run db:seed`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build |
+| `npm run typecheck` | `tsc --noEmit` (strict) |
+| `npm run lint` | ESLint |
+| `npm run test` | Vitest unit/integration tests |
+| `npm run test:e2e` | Playwright E2E |
+| `npm run db:seed` | Seed syllabus + learner state |
 
-## Learn More
+## Docs
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [`docs/PRODUCT.md`](docs/PRODUCT.md) — what we're building and why
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — system design
+- [`docs/DATA_MODEL.md`](docs/DATA_MODEL.md) — database schema
+- [`docs/LEARNING_ENGINE.md`](docs/LEARNING_ENGINE.md) — mastery, SRS, scheduler, readiness
+- [`docs/AI_SYSTEM.md`](docs/AI_SYSTEM.md) — AI services + prompt-injection defense
+- [`docs/SECURITY.md`](docs/SECURITY.md) — security model
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) — phased plan
+- [`docs/DECISIONS.md`](docs/DECISIONS.md) — architecture decision record

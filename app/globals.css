@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  CERTFORGE AI design system.
+  Dark, dense, technical "command center" aesthetic (Linear-esque).
+  Default theme is dark; a .light class on <html> flips to light.
+  Status colors (unseen/critical/learning/fragile/mastered/decaying) are
+  paired with glyphs in the UI so color is never the sole signal (a11y).
+*/
+
+:root,
+.dark {
+  --background: hsl(222 24% 6%);
+  --foreground: hsl(210 20% 92%);
+
+  --card: hsl(222 22% 9%);
+  --card-foreground: hsl(210 20% 92%);
+
+  --popover: hsl(222 24% 8%);
+  --popover-foreground: hsl(210 20% 92%);
+
+  --primary: hsl(190 95% 45%);
+  --primary-foreground: hsl(222 40% 6%);
+
+  --secondary: hsl(222 18% 16%);
+  --secondary-foreground: hsl(210 20% 92%);
+
+  --muted: hsl(222 16% 14%);
+  --muted-foreground: hsl(215 15% 60%);
+
+  --accent: hsl(222 18% 18%);
+  --accent-foreground: hsl(210 20% 96%);
+
+  --destructive: hsl(0 72% 55%);
+  --destructive-foreground: hsl(210 20% 98%);
+
+  --success: hsl(150 65% 45%);
+  --warning: hsl(38 92% 55%);
+
+  --border: hsl(220 16% 18%);
+  --input: hsl(220 16% 20%);
+  --ring: hsl(190 95% 45%);
+
+  /* Learner-state status palette (matches learner_concept_state.state) */
+  --state-unseen: hsl(220 10% 45%);
+  --state-critical: hsl(0 72% 55%);
+  --state-learning: hsl(28 92% 55%);
+  --state-fragile: hsl(45 92% 55%);
+  --state-recalling: hsl(190 85% 50%);
+  --state-mastered: hsl(150 65% 45%);
+  --state-decaying: hsl(280 60% 62%);
+
+  --radius: 0.625rem;
+}
+
+.light {
+  --background: hsl(210 20% 98%);
+  --foreground: hsl(222 30% 12%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222 30% 12%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222 30% 12%);
+  --primary: hsl(190 90% 38%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(210 16% 92%);
+  --secondary-foreground: hsl(222 30% 12%);
+  --muted: hsl(210 16% 94%);
+  --muted-foreground: hsl(215 15% 40%);
+  --accent: hsl(210 16% 90%);
+  --accent-foreground: hsl(222 30% 12%);
+  --destructive: hsl(0 72% 48%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --success: hsl(150 60% 36%);
+  --warning: hsl(38 90% 45%);
+  --border: hsl(214 18% 86%);
+  --input: hsl(214 18% 84%);
+  --ring: hsl(190 90% 38%);
+  --state-unseen: hsl(220 8% 60%);
+  --state-critical: hsl(0 72% 48%);
+  --state-learning: hsl(28 88% 48%);
+  --state-fragile: hsl(42 88% 45%);
+  --state-recalling: hsl(190 80% 42%);
+  --state-mastered: hsl(150 60% 36%);
+  --state-decaying: hsl(280 55% 50%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-state-unseen: var(--state-unseen);
+  --color-state-critical: var(--state-critical);
+  --color-state-learning: var(--state-learning);
+  --color-state-fragile: var(--state-fragile);
+  --color-state-recalling: var(--state-recalling);
+  --color-state-mastered: var(--state-mastered);
+  --color-state-decaying: var(--state-decaying);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Thin, technical scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
 }

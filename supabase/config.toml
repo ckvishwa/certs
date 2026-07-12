@@ -1,0 +1,7 @@
+# Supabase CLI project config. `supabase link --project-ref <ref>` associates
+# this repo with your hosted project; migrations live in ./migrations.
+project_id = "certforge-ai"
+
+[db]
+# Local port only used if you run `supabase start`; remote ops use the linked ref.
+port = 54322
