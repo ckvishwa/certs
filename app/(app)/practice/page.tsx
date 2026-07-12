@@ -3,8 +3,12 @@ import { createClient } from "@/lib/supabase/server";
 import { getActiveStudyPlan } from "@/lib/db/study-plan";
 import { buildQuiz } from "@/lib/db/quiz";
 import { QuizRunner } from "@/components/practice/quiz-runner";
+import { FEATURES } from "@/lib/features";
 
 export default async function PracticePage() {
+  // Frozen for the Foundation release — not reachable by direct URL.
+  if (!FEATURES.quiz) redirect("/today");
+
   const supabase = await createClient();
   const {
     data: { user },

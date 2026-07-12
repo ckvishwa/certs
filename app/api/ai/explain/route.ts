@@ -2,23 +2,19 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { explainConcept } from "@/lib/ai/services/explain-concept";
+import { FEATURES } from "@/lib/features";
 
 const bodySchema = z.object({ conceptId: z.string().uuid() });
 
 /**
- * AI is frozen for the current release (not linked from navigation). This
- * route stays in the codebase for the future AI slice but must not be
- * directly callable in the meantime — no auth check, Supabase call, or AI
- * provider should even be reached. Flip to `true` when the AI slice unfreezes.
- */
-const AI_FEATURES_ENABLED = false;
-
-/**
  * Vertical proof of the AI pipeline: authenticated user requests a structured,
  * multi-mode explanation of a concept. Auth + data access respect RLS.
+ *
+ * AI is frozen for the current release: the handler returns 404 before any auth
+ * check, Supabase call, or AI provider is reached, so no AI key is required.
  */
 export async function POST(request: Request) {
-  if (!AI_FEATURES_ENABLED) {
+  if (!FEATURES.ai) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 

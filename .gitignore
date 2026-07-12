@@ -52,3 +52,5 @@ next-env.d.ts
 # supabase CLI local cache (contains a live DB pooler connection string)
 supabase/.temp
 supabase/.branches
+
+.env*.local

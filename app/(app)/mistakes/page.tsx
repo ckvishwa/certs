@@ -5,8 +5,12 @@ import { getMistakes } from "@/lib/db/mistakes";
 import { MISTAKE_LABELS } from "@/lib/learning/mistake-classify";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { FEATURES } from "@/lib/features";
 
 export default async function MistakesPage() {
+  // Frozen for the Foundation release — not reachable by direct URL.
+  if (!FEATURES.quiz) redirect("/today");
+
   const supabase = await createClient();
   const {
     data: { user },
