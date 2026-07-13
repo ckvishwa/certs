@@ -1,0 +1,1668 @@
+{
+  "schemaVersion": 1,
+  "certification": {
+    "slug": "security-plus-sy0-701",
+    "name": "CompTIA Security+",
+    "vendor": "CompTIA",
+    "description": "Vendor-neutral baseline cybersecurity certification across concepts, threats, architecture, operations, and governance.",
+    "status": "complete",
+    "activeVersion": "SY0-701",
+    "counts": {
+      "domains": 5,
+      "objectives": 28,
+      "subObjectives": 38,
+      "concepts": 98,
+      "dependencies": 36
+    },
+    "versions": [
+      {
+        "id": "security-plus:SY0-701",
+        "code": "SY0-701",
+        "name": "CompTIA Security+ SY0-701",
+        "isActive": true,
+        "counts": {
+          "domains": 5,
+          "objectives": 28,
+          "subObjectives": 38,
+          "concepts": 98,
+          "dependencies": 36
+        },
+        "domains": [
+          {
+            "id": "security-plus:SY0-701:domain:1",
+            "number": "1",
+            "title": "General Security Concepts",
+            "weight": 12,
+            "position": 0,
+            "objectives": [
+              {
+                "id": "security-plus:SY0-701:objective:1.1",
+                "number": "1.1",
+                "title": "Compare and contrast various types of security controls",
+                "isPlaceholder": false,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:control-categories",
+                    "number": "control-categories",
+                    "title": "Control categories",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:control-categories",
+                        "slug": "control-categories",
+                        "title": "Security control categories",
+                        "description": "Technical, managerial, operational, and physical controls — classified by HOW the control is implemented.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:control-types",
+                    "number": "control-types",
+                    "title": "Control types",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:control-types",
+                        "slug": "control-types",
+                        "title": "Preventive vs detective vs corrective controls",
+                        "description": "Preventive stops an incident before it happens; detective identifies one in progress or after; corrective limits damage once found. Deterrent, compensating, and directive controls fill related gaps.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:1.2",
+                "number": "1.2",
+                "title": "Summarize fundamental security concepts",
+                "isPlaceholder": false,
+                "position": 1,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:cia-aaa",
+                    "number": "cia-aaa",
+                    "title": "CIA and AAA",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:cia-triad",
+                        "slug": "cia-triad",
+                        "title": "CIA triad",
+                        "description": "Confidentiality, Integrity, Availability — the three properties most security controls protect.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:non-repudiation",
+                        "slug": "non-repudiation",
+                        "title": "Non-repudiation",
+                        "description": "A party cannot credibly deny having performed an action, typically proven via digital signatures.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:aaa-framework",
+                        "slug": "aaa-framework",
+                        "title": "AAA (Authentication, Authorization, Accounting)",
+                        "description": "Proving identity, granting permissions, and logging activity — three distinct, sequential steps.",
+                        "isPlaceholder": false,
+                        "position": 2
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:authentication",
+                        "slug": "authentication",
+                        "title": "Authentication",
+                        "description": "Proving identity — the first step of AAA, distinct from authorization.",
+                        "isPlaceholder": false,
+                        "position": 3
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:zero-trust",
+                    "number": "zero-trust",
+                    "title": "Zero Trust",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:zero-trust",
+                        "slug": "zero-trust",
+                        "title": "Zero Trust control plane vs data plane",
+                        "description": "The control plane (policy engine, policy administrator) decides access policy; the data plane (policy enforcement point) enforces it against real traffic.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:deception-tech",
+                    "number": "deception-tech",
+                    "title": "Deception and disruption technology",
+                    "position": 2,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:deception-technology",
+                        "slug": "deception-technology",
+                        "title": "Honeypot, honeynet, honeyfile, honeytoken",
+                        "description": "Decoy systems, networks, files, and data planted to detect and study attackers rather than to serve real users.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:1.3",
+                "number": "1.3",
+                "title": "Explain the importance of change management processes and the impact to security",
+                "isPlaceholder": false,
+                "position": 2,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:change-management-process",
+                    "slug": "change-management-process",
+                    "title": "Change management process",
+                    "description": "Approval, impact analysis, testing, and a backout plan before a production change — security's stake in change control.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:allow-list-vs-deny-list",
+                    "slug": "allow-list-vs-deny-list",
+                    "title": "Allow list vs deny list",
+                    "description": "An allow list permits only explicitly approved items and blocks everything else (default-deny); a deny list blocks only named items and allows everything else (default-allow).",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:1.4",
+                "number": "1.4",
+                "title": "Explain the importance of using appropriate cryptographic solutions",
+                "isPlaceholder": false,
+                "position": 3,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:pki",
+                    "number": "pki",
+                    "title": "Public key infrastructure",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:pki",
+                        "slug": "pki",
+                        "title": "PKI",
+                        "description": "The infrastructure of certificate authorities, certificates, and trust relationships binding public keys to identities.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:encryption",
+                    "number": "encryption",
+                    "title": "Encryption",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:crypto-symmetric",
+                        "slug": "crypto-symmetric",
+                        "title": "Symmetric encryption",
+                        "description": "Same key encrypts and decrypts — fast, but the key must be shared securely.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:crypto-asymmetric",
+                        "slug": "crypto-asymmetric",
+                        "title": "Asymmetric encryption",
+                        "description": "A public/private key pair — what one key encrypts, only the other can decrypt.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:tools",
+                    "number": "tools",
+                    "title": "Cryptographic tools",
+                    "position": 2,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:tpm-vs-hsm",
+                        "slug": "tpm-vs-hsm",
+                        "title": "TPM vs HSM",
+                        "description": "A TPM is a chip soldered to one device's motherboard for that device's own keys; an HSM is a dedicated, often external/networked appliance managing keys for many systems.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:obfuscation",
+                    "number": "obfuscation",
+                    "title": "Obfuscation",
+                    "position": 3,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:tokenization-vs-masking",
+                        "slug": "tokenization-vs-masking",
+                        "title": "Tokenization vs masking",
+                        "description": "Tokenization swaps real data for a reversible reference token held in a separate vault; masking permanently obscures part of the data in place (e.g. showing only the last 4 digits).",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:hashing-salting",
+                    "number": "hashing-salting",
+                    "title": "Hashing and salting",
+                    "position": 4,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:hashing",
+                        "slug": "hashing",
+                        "title": "Hashing",
+                        "description": "A one-way function producing a fixed-size fingerprint of data — verifies integrity, does not encrypt.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:salting",
+                        "slug": "salting",
+                        "title": "Salting",
+                        "description": "Adding random data to an input before hashing so identical inputs (e.g. two equal passwords) don't produce identical hashes.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:key-stretching",
+                        "slug": "key-stretching",
+                        "title": "Key stretching",
+                        "description": "Deliberately slowing a hash function (e.g. PBKDF2) with repeated iterations so brute-force password guessing becomes impractical.",
+                        "isPlaceholder": false,
+                        "position": 2
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:digital-signatures",
+                    "number": "digital-signatures",
+                    "title": "Digital signatures",
+                    "position": 5,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:digital-signatures",
+                        "slug": "digital-signatures",
+                        "title": "Digital signatures",
+                        "description": "Signing a hash of a message with the sender's private key — proves authenticity, integrity, and non-repudiation together.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:certificates",
+                    "number": "certificates",
+                    "title": "Certificates",
+                    "position": 6,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:certificates",
+                        "slug": "certificates",
+                        "title": "Certificates",
+                        "description": "A CA-signed document binding a public key to an identity.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:crl-vs-ocsp",
+                        "slug": "crl-vs-ocsp",
+                        "title": "CRL vs OCSP",
+                        "description": "A CRL is a downloaded list of all revoked certificates; OCSP is a live, single-certificate revocation check against the CA — OCSP scales better and is more current.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:wildcard-certificate",
+                        "slug": "wildcard-certificate",
+                        "title": "Wildcard certificate",
+                        "description": "A single certificate (e.g. *.example.com) valid for any subdomain of the named domain.",
+                        "isPlaceholder": false,
+                        "position": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "security-plus:SY0-701:domain:2",
+            "number": "2",
+            "title": "Threats, Vulnerabilities, and Mitigations",
+            "weight": 22,
+            "position": 1,
+            "objectives": [
+              {
+                "id": "security-plus:SY0-701:objective:2.1",
+                "number": "2.1",
+                "title": "Compare and contrast common threat actors and motivations",
+                "isPlaceholder": false,
+                "position": 0,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:threat-vuln-risk",
+                    "slug": "threat-vuln-risk",
+                    "title": "Threat vs vulnerability vs risk",
+                    "description": "A threat is a potential danger; a vulnerability is a weakness it could exploit; risk is the likelihood and impact if it does.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:threat-actors",
+                    "slug": "threat-actors",
+                    "title": "Threat actor types and motivations",
+                    "description": "Nation-state (well-resourced, espionage), organized crime (financial gain), hacktivist (ideology), insider threat (internal access), unskilled attacker (low sophistication) — distinguished by resources and motive, not just method.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:2.2",
+                "number": "2.2",
+                "title": "Explain common threat vectors and attack surfaces",
+                "isPlaceholder": false,
+                "position": 1,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:vectors",
+                    "number": "vectors",
+                    "title": "Threat vectors",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:threat-vectors",
+                        "slug": "threat-vectors",
+                        "title": "Threat vector vs attack surface",
+                        "description": "A threat vector is the path an attack travels in (email, removable media, an open port); the attack surface is everything exposed that could be targeted.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:social-engineering",
+                    "number": "social-engineering",
+                    "title": "Social engineering",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:social-engineering-channels",
+                        "slug": "social-engineering-channels",
+                        "title": "Phishing vs vishing vs smishing",
+                        "description": "Same manipulation goal, different channel: phishing over email, vishing over voice calls, smishing over SMS text.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:2.3",
+                "number": "2.3",
+                "title": "Explain various types of vulnerabilities",
+                "isPlaceholder": false,
+                "position": 2,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:zero-day-vulnerability",
+                    "slug": "zero-day-vulnerability",
+                    "title": "Zero-day vulnerability",
+                    "description": "A flaw unknown to the vendor with no patch available — exploited before a fix can exist.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:vm-escape",
+                    "slug": "vm-escape",
+                    "title": "VM escape",
+                    "description": "Breaking out of an isolated virtual machine to access the host or other VMs — the core risk virtualization is supposed to prevent.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:sqli-vs-xss",
+                    "slug": "sqli-vs-xss",
+                    "title": "SQL injection vs cross-site scripting",
+                    "description": "SQLi injects malicious database queries through unvalidated input; XSS injects malicious scripts that run in another user's browser. Both stem from trusting unvalidated input, but attack different targets.",
+                    "isPlaceholder": false,
+                    "position": 2
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:2.4",
+                "number": "2.4",
+                "title": "Given a scenario, analyze indicators of malicious activity",
+                "isPlaceholder": false,
+                "position": 3,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:malware",
+                    "number": "malware",
+                    "title": "Malware types",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:trojan-vs-worm-vs-virus",
+                        "slug": "trojan-vs-worm-vs-virus",
+                        "title": "Trojan vs worm vs virus",
+                        "description": "A virus needs a host file and user action to spread; a worm self-propagates across a network with no user action; a trojan disguises itself as legitimate software and doesn't self-replicate.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:rootkit-vs-logic-bomb",
+                        "slug": "rootkit-vs-logic-bomb",
+                        "title": "Rootkit vs logic bomb",
+                        "description": "A rootkit hides ongoing privileged access; a logic bomb sits dormant until a trigger condition executes a payload.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:network-attacks",
+                    "number": "network-attacks",
+                    "title": "Network attacks",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:ddos-amplified-vs-reflected",
+                        "slug": "ddos-amplified-vs-reflected",
+                        "title": "Amplified vs reflected DDoS",
+                        "description": "Reflected DDoS spoofs the victim's source IP so replies flood the victim; amplified DDoS additionally uses requests whose replies are much larger than the request, multiplying the flood.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:password-attacks",
+                    "number": "password-attacks",
+                    "title": "Password attacks",
+                    "position": 2,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:password-spraying-vs-brute-force",
+                        "slug": "password-spraying-vs-brute-force",
+                        "title": "Password spraying vs brute force",
+                        "description": "Brute force tries many passwords against one account; spraying tries one or few common passwords against many accounts to avoid lockout thresholds.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:indicators",
+                    "number": "indicators",
+                    "title": "Indicators",
+                    "position": 3,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:malicious-activity-indicators",
+                        "slug": "malicious-activity-indicators",
+                        "title": "Indicators of malicious activity",
+                        "description": "Account lockout, impossible travel, and abnormal resource consumption are signs an account or system may be compromised, even before a clear alert fires.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:2.5",
+                "number": "2.5",
+                "title": "Explain the purpose of mitigation techniques used to secure the enterprise",
+                "isPlaceholder": false,
+                "position": 4,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:segmentation",
+                    "slug": "segmentation",
+                    "title": "Network segmentation",
+                    "description": "Dividing a network into isolated zones so a breach in one zone can't freely reach another.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:least-privilege",
+                    "slug": "least-privilege",
+                    "title": "Least privilege",
+                    "description": "Granting only the minimum access needed to perform a job, nothing more.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:application-allow-list",
+                    "slug": "application-allow-list",
+                    "title": "Application allow listing",
+                    "description": "Only explicitly approved applications may run — everything else is blocked by default, applying the allow-list model to executables.",
+                    "isPlaceholder": false,
+                    "position": 2
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "security-plus:SY0-701:domain:3",
+            "number": "3",
+            "title": "Security Architecture",
+            "weight": 18,
+            "position": 2,
+            "objectives": [
+              {
+                "id": "security-plus:SY0-701:objective:3.1",
+                "number": "3.1",
+                "title": "Compare and contrast security implications of different architecture models",
+                "isPlaceholder": false,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:cloud-infrastructure",
+                    "number": "cloud-infrastructure",
+                    "title": "Cloud and infrastructure concepts",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:cloud-responsibility-matrix",
+                        "slug": "cloud-responsibility-matrix",
+                        "title": "Cloud shared responsibility matrix",
+                        "description": "The provider secures the cloud infrastructure itself; the customer remains responsible for securing what they put in it — the split shifts by service model (IaaS/PaaS/SaaS).",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:virtualization-vs-containerization",
+                        "slug": "virtualization-vs-containerization",
+                        "title": "Virtualization vs containerization",
+                        "description": "Virtualization runs full guest OS instances on a hypervisor; containers share one host OS kernel and isolate only the application layer — lighter weight, less isolation.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:iac-infrastructure-as-code",
+                        "slug": "iac-infrastructure-as-code",
+                        "title": "Infrastructure as code",
+                        "description": "Defining and provisioning infrastructure through versioned configuration files instead of manual setup.",
+                        "isPlaceholder": false,
+                        "position": 2
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:specialized-systems",
+                    "number": "specialized-systems",
+                    "title": "Specialized and embedded systems",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:ics-scada",
+                        "slug": "ics-scada",
+                        "title": "ICS/SCADA",
+                        "description": "Industrial control systems and the supervisory software that monitors them — typically prioritize uptime over patching, unlike IT systems.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:3.2",
+                "number": "3.2",
+                "title": "Given a scenario, apply security principles to secure enterprise infrastructure",
+                "isPlaceholder": false,
+                "position": 1,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:appliances",
+                    "number": "appliances",
+                    "title": "Network appliances",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:ids-ips",
+                        "slug": "ids-ips",
+                        "title": "IDS vs IPS",
+                        "description": "An IDS passively monitors and alerts on suspicious traffic (detection); an IPS sits inline and can actively block it (prevention).",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:jump-server-vs-proxy-server",
+                        "slug": "jump-server-vs-proxy-server",
+                        "title": "Jump server vs proxy server",
+                        "description": "A jump server is a hardened bastion host administrators pass through to reach a protected network; a proxy server relays and filters client requests to external resources.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:fail-open-vs-fail-closed",
+                        "slug": "fail-open-vs-fail-closed",
+                        "title": "Fail-open vs fail-closed",
+                        "description": "On failure, fail-open lets traffic pass unfiltered (favors availability); fail-closed blocks all traffic (favors security).",
+                        "isPlaceholder": false,
+                        "position": 2
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:firewalls",
+                    "number": "firewalls",
+                    "title": "Firewall types",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:firewall-generations",
+                        "slug": "firewall-generations",
+                        "title": "WAF vs NGFW vs UTM",
+                        "description": "A WAF inspects web application traffic specifically; an NGFW adds application-awareness to traditional firewalling; a UTM bundles many security functions (firewall, IPS, antivirus) into one appliance.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:secure-comms",
+                    "number": "secure-comms",
+                    "title": "Secure communication and access",
+                    "position": 2,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:vpn-tunneling",
+                        "slug": "vpn-tunneling",
+                        "title": "TLS vs IPSec tunneling",
+                        "description": "Both encrypt traffic in transit; TLS typically secures a specific application session, while IPSec operates at the network layer and can secure all traffic between two endpoints (site-to-site VPN).",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:3.3",
+                "number": "3.3",
+                "title": "Compare and contrast concepts and strategies to protect data",
+                "isPlaceholder": false,
+                "position": 2,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:data-classification",
+                    "slug": "data-classification",
+                    "title": "Data classification levels",
+                    "description": "Labeling data (public, private, confidential, restricted) so handling and protection requirements scale with sensitivity.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:data-states",
+                    "slug": "data-states",
+                    "title": "Data at rest vs in transit vs in use",
+                    "description": "Data at rest is stored; in transit is moving across a network; in use is actively processed in memory — each state needs different protections.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:data-protection-methods",
+                    "slug": "data-protection-methods",
+                    "title": "Data protection method selection",
+                    "description": "Choosing encryption, hashing, masking, tokenization, or segmentation based on whether data must remain usable, verifiable, or fully hidden.",
+                    "isPlaceholder": false,
+                    "position": 2
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:3.4",
+                "number": "3.4",
+                "title": "Explain the importance of resilience and recovery in security architecture",
+                "isPlaceholder": false,
+                "position": 3,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:hot-warm-cold-site",
+                    "slug": "hot-warm-cold-site",
+                    "title": "Hot site vs warm site vs cold site",
+                    "description": "A hot site is fully equipped and can take over almost immediately; a warm site has some infrastructure ready but needs setup; a cold site is bare space requiring full buildout.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:load-balancing-vs-clustering",
+                    "slug": "load-balancing-vs-clustering",
+                    "title": "Load balancing vs clustering",
+                    "description": "Load balancing distributes traffic across independent servers; clustering groups servers to act as one highly-available unit, often with automatic failover.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:backup-types",
+                    "slug": "backup-types",
+                    "title": "Backup strategy fundamentals",
+                    "description": "Onsite/offsite placement, frequency, and encryption together determine how much data could be lost and how fast it can be restored.",
+                    "isPlaceholder": false,
+                    "position": 2
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "security-plus:SY0-701:domain:4",
+            "number": "4",
+            "title": "Security Operations",
+            "weight": 28,
+            "position": 3,
+            "objectives": [
+              {
+                "id": "security-plus:SY0-701:objective:4.1",
+                "number": "4.1",
+                "title": "Given a scenario, apply common security techniques to computing resources",
+                "isPlaceholder": false,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:hardening",
+                    "number": "hardening",
+                    "title": "Secure baselines and hardening",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:secure-baseline",
+                        "slug": "secure-baseline",
+                        "title": "Secure baseline",
+                        "description": "A documented, hardened starting configuration that systems are established from, deployed against, and continually maintained to match.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:mobile",
+                    "number": "mobile",
+                    "title": "Mobile solutions",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:byod-cope-cyod",
+                        "slug": "byod-cope-cyod",
+                        "title": "BYOD vs COPE vs CYOD",
+                        "description": "BYOD: employee owns and enrolls a personal device. COPE: company owns it, employee may use it personally. CYOD: employee picks from a company-approved device list; company owns it.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:mdm-mobile-device-management",
+                        "slug": "mdm-mobile-device-management",
+                        "title": "Mobile device management (MDM)",
+                        "description": "Centralized tooling to enforce policy, push configuration, and remotely wipe managed mobile devices.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:wireless",
+                    "number": "wireless",
+                    "title": "Wireless security settings",
+                    "position": 2,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:wpa3-wireless-security",
+                        "slug": "wpa3-wireless-security",
+                        "title": "WPA3",
+                        "description": "The current Wi-Fi security standard, replacing WPA2, with stronger encryption and protection against offline password-guessing attacks.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:4.2",
+                "number": "4.2",
+                "title": "Explain the security implications of proper hardware, software, and data asset management",
+                "isPlaceholder": false,
+                "position": 1,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:asset-lifecycle-management",
+                    "slug": "asset-lifecycle-management",
+                    "title": "Asset lifecycle management",
+                    "description": "Tracking a device or license from acquisition through assignment, monitoring, and eventual decommissioning.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:media-sanitization-vs-destruction",
+                    "slug": "media-sanitization-vs-destruction",
+                    "title": "Sanitization vs destruction",
+                    "description": "Sanitization (e.g. wiping) removes data so the media can be reused; destruction physically or logically destroys the media so it cannot be reused at all.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:4.3",
+                "number": "4.3",
+                "title": "Explain various activities associated with vulnerability management",
+                "isPlaceholder": false,
+                "position": 2,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:identification",
+                    "number": "identification",
+                    "title": "Identification methods",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:vulnerability-scan-vs-penetration-test",
+                        "slug": "vulnerability-scan-vs-penetration-test",
+                        "title": "Vulnerability scan vs penetration test",
+                        "description": "A vulnerability scan is automated and passive, listing potential weaknesses; a penetration test actively attempts to exploit them to prove real-world impact.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:analysis",
+                    "number": "analysis",
+                    "title": "Analysis",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:false-positive-vs-false-negative",
+                        "slug": "false-positive-vs-false-negative",
+                        "title": "False positive vs false negative",
+                        "description": "A false positive flags something safe as a threat; a false negative misses a real threat entirely — false negatives are generally more dangerous.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:cvss-cve",
+                        "slug": "cvss-cve",
+                        "title": "CVSS vs CVE",
+                        "description": "A CVE is a unique identifier for a specific known vulnerability; CVSS is the standardized 0-10 score rating that vulnerability's severity.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:remediation",
+                    "number": "remediation",
+                    "title": "Vulnerability response and remediation",
+                    "position": 2,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:vulnerability-remediation-strategies",
+                        "slug": "vulnerability-remediation-strategies",
+                        "title": "Vulnerability remediation strategies",
+                        "description": "Patching fixes the flaw directly; compensating controls, segmentation, or accepted exceptions manage the risk when patching isn't immediately possible.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:4.4",
+                "number": "4.4",
+                "title": "Explain security alerting and monitoring concepts and tools",
+                "isPlaceholder": false,
+                "position": 3,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:siem-security-information-event-management",
+                    "slug": "siem-security-information-event-management",
+                    "title": "SIEM",
+                    "description": "Aggregates logs from many sources into one system for correlated alerting, search, and reporting.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:log-aggregation-alerting",
+                    "slug": "log-aggregation-alerting",
+                    "title": "Log aggregation and alert tuning",
+                    "description": "Centralizing logs is only useful if alert thresholds are tuned — too sensitive causes alert fatigue, too loose misses real incidents.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:dlp-data-loss-prevention",
+                    "slug": "dlp-data-loss-prevention",
+                    "title": "Data loss prevention (DLP)",
+                    "description": "Tooling that detects and blocks sensitive data from leaving the organization through unauthorized channels.",
+                    "isPlaceholder": false,
+                    "position": 2
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:4.5",
+                "number": "4.5",
+                "title": "Given a scenario, modify enterprise capabilities to enhance security",
+                "isPlaceholder": false,
+                "position": 4,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:dmarc-dkim-spf",
+                    "slug": "dmarc-dkim-spf",
+                    "title": "DMARC, DKIM, and SPF",
+                    "description": "Three complementary email-authentication standards: SPF checks the sending server is authorized, DKIM verifies the message wasn't altered in transit, DMARC tells receivers what to do when SPF/DKIM fail.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:nac-network-access-control",
+                    "slug": "nac-network-access-control",
+                    "title": "Network access control (NAC)",
+                    "description": "Evaluates a device's posture (patched, has antivirus, etc.) before allowing it onto the network.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:edr-vs-xdr",
+                    "slug": "edr-vs-xdr",
+                    "title": "EDR vs XDR",
+                    "description": "EDR monitors and responds to threats on individual endpoints; XDR correlates signals across endpoints, network, and other sources for broader detection.",
+                    "isPlaceholder": false,
+                    "position": 2
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:4.6",
+                "number": "4.6",
+                "title": "Given a scenario, implement and maintain identity and access management",
+                "isPlaceholder": false,
+                "position": 5,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:sso",
+                    "number": "sso",
+                    "title": "Single sign-on",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:sso",
+                        "slug": "sso",
+                        "title": "Single sign-on (SSO)",
+                        "description": "One authentication grants access to multiple independent systems without re-entering credentials.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:federation",
+                        "slug": "federation",
+                        "title": "Federation",
+                        "description": "Extending trust in an identity across separate organizations, so one org's login works at another's service.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:saml",
+                        "slug": "saml",
+                        "title": "SAML",
+                        "description": "An XML-based standard for exchanging SSO authentication and authorization assertions, common in enterprise identity federation.",
+                        "isPlaceholder": false,
+                        "position": 2
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:oauth",
+                        "slug": "oauth",
+                        "title": "OAuth",
+                        "description": "An authorization framework letting an app access another service's resources on a user's behalf, without handling the user's password.",
+                        "isPlaceholder": false,
+                        "position": 3
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:oidc",
+                        "slug": "oidc",
+                        "title": "OpenID Connect",
+                        "description": "An authentication layer built on top of OAuth 2.0 — OAuth authorizes access to resources, OIDC additionally verifies who the user is.",
+                        "isPlaceholder": false,
+                        "position": 4
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:access-controls",
+                    "number": "access-controls",
+                    "title": "Access controls",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:access-control-models",
+                        "slug": "access-control-models",
+                        "title": "RBAC vs DAC vs MAC",
+                        "description": "Role-based grants access by job role; discretionary lets the data owner decide who gets access; mandatory enforces a central authority's classification-based policy that owners cannot override.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:mfa",
+                    "number": "mfa",
+                    "title": "Multifactor authentication",
+                    "position": 2,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:mfa",
+                        "slug": "mfa",
+                        "title": "Multi-factor authentication",
+                        "description": "Combining two or more distinct factor categories — something you know, have, are, or somewhere you are — so a single stolen credential isn't enough.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:pam",
+                    "number": "pam",
+                    "title": "Privileged access management",
+                    "position": 3,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:privileged-access-management",
+                        "slug": "privileged-access-management",
+                        "title": "Privileged access management (PAM)",
+                        "description": "Just-in-time elevation, password vaulting, and ephemeral credentials that grant privileged access only when needed and for a limited time.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:password-best-practices",
+                        "slug": "password-best-practices",
+                        "title": "Password best practices",
+                        "description": "Length matters more than forced complexity; password managers and passwordless methods reduce reuse risk better than frequent forced rotation.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:4.7",
+                "number": "4.7",
+                "title": "Explain the importance of automation and orchestration related to secure operations",
+                "isPlaceholder": false,
+                "position": 6,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:automation-benefits-risks",
+                    "slug": "automation-benefits-risks",
+                    "title": "Automation benefits vs risks",
+                    "description": "Automation saves time and enforces consistent baselines, but concentrates risk — a scripting error or single point of failure can now scale instantly across the whole environment.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:4.8",
+                "number": "4.8",
+                "title": "Explain appropriate incident response activities",
+                "isPlaceholder": false,
+                "position": 7,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:incident-response",
+                    "slug": "incident-response",
+                    "title": "Incident response process",
+                    "description": "The ordered phases: preparation, detection, analysis, containment, eradication, recovery, and lessons learned.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:containment-vs-eradication",
+                    "slug": "containment-vs-eradication",
+                    "title": "Containment vs eradication",
+                    "description": "Containment stops an incident from spreading further right now; eradication removes the root cause afterward so it can't recur.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:chain-of-custody",
+                    "slug": "chain-of-custody",
+                    "title": "Chain of custody",
+                    "description": "An unbroken, documented record of who handled evidence and when — without it, evidence may be inadmissible or untrustworthy.",
+                    "isPlaceholder": false,
+                    "position": 2
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:4.9",
+                "number": "4.9",
+                "title": "Given a scenario, use data sources to support an investigation",
+                "isPlaceholder": false,
+                "position": 8,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:log-data-sources",
+                    "slug": "log-data-sources",
+                    "title": "Log data sources for investigation",
+                    "description": "Firewall, endpoint, application, and network logs each capture a different vantage point — a full investigation usually needs several correlated together.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:event-vs-alert-vs-incident",
+                    "slug": "event-vs-alert-vs-incident",
+                    "title": "Event vs alert vs incident",
+                    "description": "An event is any logged occurrence; an alert is an event flagged as potentially significant; an incident is a confirmed, actionable security event requiring response.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "security-plus:SY0-701:domain:5",
+            "number": "5",
+            "title": "Security Program Management and Oversight",
+            "weight": 20,
+            "position": 4,
+            "objectives": [
+              {
+                "id": "security-plus:SY0-701:objective:5.1",
+                "number": "5.1",
+                "title": "Summarize elements of effective security governance",
+                "isPlaceholder": false,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:policies",
+                    "number": "policies",
+                    "title": "Policies and standards",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:security-policy-types",
+                        "slug": "security-policy-types",
+                        "title": "Security policy types",
+                        "description": "AUP, incident response, business continuity, and SDLC policies each govern a distinct area — a policy states intent, a standard states the specific required configuration.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:bcp-dr",
+                        "slug": "bcp-dr",
+                        "title": "BCP vs DR",
+                        "description": "Business continuity planning keeps critical operations running during a disruption; disaster recovery restores systems and data afterward.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:roles",
+                    "number": "roles",
+                    "title": "Roles and responsibilities for data",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:data-roles",
+                        "slug": "data-roles",
+                        "title": "Data owner vs controller vs processor vs custodian",
+                        "description": "The owner is accountable for the data's classification and use; the controller decides how/why it's processed; the processor handles it on the controller's behalf; the custodian handles day-to-day technical safeguarding.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:5.2",
+                "number": "5.2",
+                "title": "Explain elements of the risk management process",
+                "isPlaceholder": false,
+                "position": 1,
+                "concepts": [],
+                "subObjectives": [
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:risk-analysis",
+                    "number": "risk-analysis",
+                    "title": "Risk analysis",
+                    "position": 0,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:qualitative-vs-quantitative-risk",
+                        "slug": "qualitative-vs-quantitative-risk",
+                        "title": "Qualitative vs quantitative risk analysis",
+                        "description": "Qualitative ranks risk using descriptive categories (low/medium/high); quantitative assigns real dollar figures to likelihood and impact.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      },
+                      {
+                        "id": "security-plus:SY0-701:concept:sle-ale-aro",
+                        "slug": "sle-ale-aro",
+                        "title": "SLE, ALE, and ARO",
+                        "description": "SLE = expected loss from one occurrence; ARO = how many times per year it's expected to happen; ALE = SLE × ARO, the expected annual loss.",
+                        "isPlaceholder": false,
+                        "position": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:strategies",
+                    "number": "strategies",
+                    "title": "Risk management strategies",
+                    "position": 1,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:risk-management-strategies",
+                        "slug": "risk-management-strategies",
+                        "title": "Risk transfer vs accept vs avoid vs mitigate",
+                        "description": "Transfer shifts risk to another party (e.g. insurance); accept knowingly keeps it; avoid eliminates the risky activity entirely; mitigate reduces likelihood or impact with controls.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  },
+                  {
+                    "id": "security-plus:SY0-701:sub-objective:bia",
+                    "number": "bia",
+                    "title": "Business impact analysis",
+                    "position": 2,
+                    "concepts": [
+                      {
+                        "id": "security-plus:SY0-701:concept:rto-rpo",
+                        "slug": "rto-rpo",
+                        "title": "RTO vs RPO",
+                        "description": "RTO is the maximum acceptable time to restore a service after disruption; RPO is the maximum acceptable amount of data loss, measured in time since the last good backup.",
+                        "isPlaceholder": false,
+                        "position": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "security-plus:SY0-701:objective:5.3",
+                "number": "5.3",
+                "title": "Explain the processes associated with third-party risk assessment and management",
+                "isPlaceholder": false,
+                "position": 2,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:vendor-risk-assessment",
+                    "slug": "vendor-risk-assessment",
+                    "title": "Vendor risk assessment",
+                    "description": "Evaluating a third party's security posture — via penetration test results, audit evidence, or a right-to-audit clause — before and during a business relationship.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:agreement-types",
+                    "slug": "agreement-types",
+                    "title": "SLA vs MOU vs NDA vs MSA",
+                    "description": "An SLA sets measurable service commitments; an MOU documents mutual intent without binding legal obligations; an NDA protects confidential information; an MSA sets the overarching terms governing future work orders.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:5.4",
+                "number": "5.4",
+                "title": "Summarize elements of effective security compliance",
+                "isPlaceholder": false,
+                "position": 3,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:compliance-monitoring",
+                    "slug": "compliance-monitoring",
+                    "title": "Compliance monitoring",
+                    "description": "Ongoing due diligence, attestation, and automation that confirm controls remain in place — not just a one-time audit checkbox.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:right-to-be-forgotten",
+                    "slug": "right-to-be-forgotten",
+                    "title": "Right to be forgotten",
+                    "description": "A privacy-regulation right (e.g. under GDPR) allowing an individual to request their personal data be deleted.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:5.5",
+                "number": "5.5",
+                "title": "Explain types and purposes of audits and assessments",
+                "isPlaceholder": false,
+                "position": 4,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:internal-vs-external-audit",
+                    "slug": "internal-vs-external-audit",
+                    "title": "Internal vs external audit",
+                    "description": "Internal audits are performed by the organization's own staff for self-assessment; external audits are performed by an independent third party, often for regulatory or contractual assurance.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:pentest-environment-knowledge",
+                    "slug": "pentest-environment-knowledge",
+                    "title": "Known vs partially known vs unknown environment testing",
+                    "description": "Known environment (white box): tester has full information. Partially known (gray box): tester has some. Unknown (black box): tester starts with none, simulating a real external attacker.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "security-plus:SY0-701:objective:5.6",
+                "number": "5.6",
+                "title": "Given a scenario, implement security awareness practices",
+                "isPlaceholder": false,
+                "position": 5,
+                "concepts": [
+                  {
+                    "id": "security-plus:SY0-701:concept:security-awareness-training",
+                    "slug": "security-awareness-training",
+                    "title": "Security awareness training",
+                    "description": "Ongoing phishing simulations and user guidance that build a workforce's ability to recognize and report social engineering, not just a one-time onboarding session.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "security-plus:SY0-701:concept:insider-threat-recognition",
+                    "slug": "insider-threat-recognition",
+                    "title": "Insider threat recognition",
+                    "description": "Recognizing risky, unexpected, or unintentional user behavior as a potential indicator of insider threat, distinct from external attack indicators.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          {
+            "conceptId": "security-plus:SY0-701:concept:crypto-asymmetric",
+            "prerequisiteId": "security-plus:SY0-701:concept:crypto-symmetric",
+            "conceptSlug": "crypto-asymmetric",
+            "prerequisiteSlug": "crypto-symmetric"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:digital-signatures",
+            "prerequisiteId": "security-plus:SY0-701:concept:hashing",
+            "conceptSlug": "digital-signatures",
+            "prerequisiteSlug": "hashing"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:digital-signatures",
+            "prerequisiteId": "security-plus:SY0-701:concept:crypto-asymmetric",
+            "conceptSlug": "digital-signatures",
+            "prerequisiteSlug": "crypto-asymmetric"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:certificates",
+            "prerequisiteId": "security-plus:SY0-701:concept:digital-signatures",
+            "conceptSlug": "certificates",
+            "prerequisiteSlug": "digital-signatures"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:pki",
+            "prerequisiteId": "security-plus:SY0-701:concept:certificates",
+            "conceptSlug": "pki",
+            "prerequisiteSlug": "certificates"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:mfa",
+            "prerequisiteId": "security-plus:SY0-701:concept:authentication",
+            "conceptSlug": "mfa",
+            "prerequisiteSlug": "authentication"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:sso",
+            "prerequisiteId": "security-plus:SY0-701:concept:authentication",
+            "conceptSlug": "sso",
+            "prerequisiteSlug": "authentication"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:federation",
+            "prerequisiteId": "security-plus:SY0-701:concept:sso",
+            "conceptSlug": "federation",
+            "prerequisiteSlug": "sso"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:saml",
+            "prerequisiteId": "security-plus:SY0-701:concept:federation",
+            "conceptSlug": "saml",
+            "prerequisiteSlug": "federation"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:oauth",
+            "prerequisiteId": "security-plus:SY0-701:concept:federation",
+            "conceptSlug": "oauth",
+            "prerequisiteSlug": "federation"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:oidc",
+            "prerequisiteId": "security-plus:SY0-701:concept:oauth",
+            "conceptSlug": "oidc",
+            "prerequisiteSlug": "oauth"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:non-repudiation",
+            "prerequisiteId": "security-plus:SY0-701:concept:digital-signatures",
+            "conceptSlug": "non-repudiation",
+            "prerequisiteSlug": "digital-signatures"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:aaa-framework",
+            "prerequisiteId": "security-plus:SY0-701:concept:authentication",
+            "conceptSlug": "aaa-framework",
+            "prerequisiteSlug": "authentication"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:zero-trust",
+            "prerequisiteId": "security-plus:SY0-701:concept:aaa-framework",
+            "conceptSlug": "zero-trust",
+            "prerequisiteSlug": "aaa-framework"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:salting",
+            "prerequisiteId": "security-plus:SY0-701:concept:hashing",
+            "conceptSlug": "salting",
+            "prerequisiteSlug": "hashing"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:key-stretching",
+            "prerequisiteId": "security-plus:SY0-701:concept:hashing",
+            "conceptSlug": "key-stretching",
+            "prerequisiteSlug": "hashing"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:crl-vs-ocsp",
+            "prerequisiteId": "security-plus:SY0-701:concept:certificates",
+            "conceptSlug": "crl-vs-ocsp",
+            "prerequisiteSlug": "certificates"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:wildcard-certificate",
+            "prerequisiteId": "security-plus:SY0-701:concept:certificates",
+            "conceptSlug": "wildcard-certificate",
+            "prerequisiteSlug": "certificates"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:tpm-vs-hsm",
+            "prerequisiteId": "security-plus:SY0-701:concept:pki",
+            "conceptSlug": "tpm-vs-hsm",
+            "prerequisiteSlug": "pki"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:tokenization-vs-masking",
+            "prerequisiteId": "security-plus:SY0-701:concept:hashing",
+            "conceptSlug": "tokenization-vs-masking",
+            "prerequisiteSlug": "hashing"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:data-protection-methods",
+            "prerequisiteId": "security-plus:SY0-701:concept:crypto-symmetric",
+            "conceptSlug": "data-protection-methods",
+            "prerequisiteSlug": "crypto-symmetric"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:data-protection-methods",
+            "prerequisiteId": "security-plus:SY0-701:concept:hashing",
+            "conceptSlug": "data-protection-methods",
+            "prerequisiteSlug": "hashing"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:vulnerability-scan-vs-penetration-test",
+            "prerequisiteId": "security-plus:SY0-701:concept:threat-vuln-risk",
+            "conceptSlug": "vulnerability-scan-vs-penetration-test",
+            "prerequisiteSlug": "threat-vuln-risk"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:cvss-cve",
+            "prerequisiteId": "security-plus:SY0-701:concept:vulnerability-scan-vs-penetration-test",
+            "conceptSlug": "cvss-cve",
+            "prerequisiteSlug": "vulnerability-scan-vs-penetration-test"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:vulnerability-remediation-strategies",
+            "prerequisiteId": "security-plus:SY0-701:concept:cvss-cve",
+            "conceptSlug": "vulnerability-remediation-strategies",
+            "prerequisiteSlug": "cvss-cve"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:edr-vs-xdr",
+            "prerequisiteId": "security-plus:SY0-701:concept:ids-ips",
+            "conceptSlug": "edr-vs-xdr",
+            "prerequisiteSlug": "ids-ips"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:containment-vs-eradication",
+            "prerequisiteId": "security-plus:SY0-701:concept:incident-response",
+            "conceptSlug": "containment-vs-eradication",
+            "prerequisiteSlug": "incident-response"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:chain-of-custody",
+            "prerequisiteId": "security-plus:SY0-701:concept:incident-response",
+            "conceptSlug": "chain-of-custody",
+            "prerequisiteSlug": "incident-response"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:event-vs-alert-vs-incident",
+            "prerequisiteId": "security-plus:SY0-701:concept:incident-response",
+            "conceptSlug": "event-vs-alert-vs-incident",
+            "prerequisiteSlug": "incident-response"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:hot-warm-cold-site",
+            "prerequisiteId": "security-plus:SY0-701:concept:bcp-dr",
+            "conceptSlug": "hot-warm-cold-site",
+            "prerequisiteSlug": "bcp-dr"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:load-balancing-vs-clustering",
+            "prerequisiteId": "security-plus:SY0-701:concept:hot-warm-cold-site",
+            "conceptSlug": "load-balancing-vs-clustering",
+            "prerequisiteSlug": "hot-warm-cold-site"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:backup-types",
+            "prerequisiteId": "security-plus:SY0-701:concept:hot-warm-cold-site",
+            "conceptSlug": "backup-types",
+            "prerequisiteSlug": "hot-warm-cold-site"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:sle-ale-aro",
+            "prerequisiteId": "security-plus:SY0-701:concept:qualitative-vs-quantitative-risk",
+            "conceptSlug": "sle-ale-aro",
+            "prerequisiteSlug": "qualitative-vs-quantitative-risk"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:risk-management-strategies",
+            "prerequisiteId": "security-plus:SY0-701:concept:qualitative-vs-quantitative-risk",
+            "conceptSlug": "risk-management-strategies",
+            "prerequisiteSlug": "qualitative-vs-quantitative-risk"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:privileged-access-management",
+            "prerequisiteId": "security-plus:SY0-701:concept:access-control-models",
+            "conceptSlug": "privileged-access-management",
+            "prerequisiteSlug": "access-control-models"
+          },
+          {
+            "conceptId": "security-plus:SY0-701:concept:access-control-models",
+            "prerequisiteId": "security-plus:SY0-701:concept:least-privilege",
+            "conceptSlug": "access-control-models",
+            "prerequisiteSlug": "least-privilege"
+          }
+        ]
+      }
+    ]
+  },
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "sourceRevision": "a76021c7721fa6d73276b6d17da563bcb05d8ff2"
+}

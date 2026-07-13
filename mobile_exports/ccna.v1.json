@@ -1,0 +1,604 @@
+{
+  "schemaVersion": 1,
+  "certification": {
+    "slug": "ccna",
+    "name": "Cisco CCNA",
+    "vendor": "Cisco",
+    "description": "Cisco Certified Network Associate — foundational networking across routing, switching, services, security, and automation.",
+    "status": "coverage_in_progress",
+    "activeVersion": "200-301 v1.1",
+    "counts": {
+      "domains": 12,
+      "objectives": 23,
+      "subObjectives": 0,
+      "concepts": 20,
+      "dependencies": 10
+    },
+    "versions": [
+      {
+        "id": "ccna:200-301 v1.1",
+        "code": "200-301 v1.1",
+        "name": "CCNA 200-301 v1.1",
+        "isActive": true,
+        "counts": {
+          "domains": 6,
+          "objectives": 17,
+          "subObjectives": 0,
+          "concepts": 20,
+          "dependencies": 10
+        },
+        "domains": [
+          {
+            "id": "ccna:200-301 v1.1:domain:1",
+            "number": "1",
+            "title": "Network Fundamentals",
+            "weight": 20,
+            "position": 0,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v1.1:objective:1.1",
+                "number": "1.1",
+                "title": "Explain the role and function of network components",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:1.6",
+                "number": "1.6",
+                "title": "Configure and verify IPv4 addressing and subnetting",
+                "isPlaceholder": true,
+                "position": 1,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:binary-math",
+                    "slug": "binary-math",
+                    "title": "Binary math",
+                    "description": "Converting between binary and decimal — the basis of subnetting.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "ccna:200-301 v1.1:concept:ipv4-addressing",
+                    "slug": "ipv4-addressing",
+                    "title": "IPv4 addressing",
+                    "description": "Structure of IPv4 addresses and classes.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  },
+                  {
+                    "id": "ccna:200-301 v1.1:concept:subnet-mask",
+                    "slug": "subnet-mask",
+                    "title": "Subnet masks",
+                    "description": "How masks split network and host portions.",
+                    "isPlaceholder": false,
+                    "position": 2
+                  },
+                  {
+                    "id": "ccna:200-301 v1.1:concept:subnetting",
+                    "slug": "subnetting",
+                    "title": "Subnetting",
+                    "description": "Dividing networks; finding network/broadcast/host ranges.",
+                    "isPlaceholder": false,
+                    "position": 3
+                  },
+                  {
+                    "id": "ccna:200-301 v1.1:concept:vlsm",
+                    "slug": "vlsm",
+                    "title": "VLSM",
+                    "description": "Variable-length subnet masking for efficient allocation.",
+                    "isPlaceholder": false,
+                    "position": 4
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:1.8",
+                "number": "1.8",
+                "title": "Configure and verify IPv6 addressing and prefixes",
+                "isPlaceholder": true,
+                "position": 2,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:ipv6-addressing",
+                    "slug": "ipv6-addressing",
+                    "title": "IPv6 addressing",
+                    "description": "IPv6 address format and types.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:1.11",
+                "number": "1.11",
+                "title": "Describe wireless principles",
+                "isPlaceholder": true,
+                "position": 3,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:wireless-principles",
+                    "slug": "wireless-principles",
+                    "title": "Wireless principles",
+                    "description": null,
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v1.1:domain:2",
+            "number": "2",
+            "title": "Network Access",
+            "weight": 20,
+            "position": 1,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v1.1:objective:2.1",
+                "number": "2.1",
+                "title": "Configure and verify VLANs across multiple switches",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:vlan",
+                    "slug": "vlan",
+                    "title": "VLANs",
+                    "description": "Segmenting a switched network into broadcast domains.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "ccna:200-301 v1.1:concept:trunking",
+                    "slug": "trunking",
+                    "title": "Trunking (802.1Q)",
+                    "description": "Carrying multiple VLANs over one link.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:2.3",
+                "number": "2.3",
+                "title": "Configure and verify Layer 2 discovery and EtherChannel",
+                "isPlaceholder": true,
+                "position": 1,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:etherchannel",
+                    "slug": "etherchannel",
+                    "title": "EtherChannel",
+                    "description": "Bundling links for bandwidth and redundancy.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:2.4",
+                "number": "2.4",
+                "title": "Interpret spanning tree protocol operation",
+                "isPlaceholder": true,
+                "position": 2,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:stp",
+                    "slug": "stp",
+                    "title": "Spanning Tree Protocol",
+                    "description": "Loop prevention; root/port roles and states.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v1.1:domain:3",
+            "number": "3",
+            "title": "IP Connectivity",
+            "weight": 25,
+            "position": 2,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v1.1:objective:3.1",
+                "number": "3.1",
+                "title": "Interpret the components of a routing table",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:route-selection",
+                    "slug": "route-selection",
+                    "title": "Route selection",
+                    "description": "Longest prefix match, AD, and metric.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:3.3",
+                "number": "3.3",
+                "title": "Configure and verify IPv4 and IPv6 static routing",
+                "isPlaceholder": true,
+                "position": 1,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:static-routing",
+                    "slug": "static-routing",
+                    "title": "Static routing",
+                    "description": "Manually configured routes and default routes.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:3.4",
+                "number": "3.4",
+                "title": "Configure and verify single-area OSPFv2",
+                "isPlaceholder": true,
+                "position": 2,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:ospf",
+                    "slug": "ospf",
+                    "title": "OSPF",
+                    "description": "Link-state IGP; neighbors, DR/BDR, cost.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  },
+                  {
+                    "id": "ccna:200-301 v1.1:concept:ospf-neighbors",
+                    "slug": "ospf-neighbors",
+                    "title": "OSPF neighbor formation",
+                    "description": "Adjacency states and requirements.",
+                    "isPlaceholder": false,
+                    "position": 1
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v1.1:domain:4",
+            "number": "4",
+            "title": "IP Services",
+            "weight": 10,
+            "position": 3,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v1.1:objective:4.1",
+                "number": "4.1",
+                "title": "Configure and verify inside source NAT",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:nat",
+                    "slug": "nat",
+                    "title": "NAT / PAT",
+                    "description": "Translating private to public addresses.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:4.3",
+                "number": "4.3",
+                "title": "Explain the role of DHCP and DNS",
+                "isPlaceholder": true,
+                "position": 1,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:dhcp",
+                    "slug": "dhcp",
+                    "title": "DHCP",
+                    "description": "Automatic IP address assignment.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v1.1:domain:5",
+            "number": "5",
+            "title": "Security Fundamentals",
+            "weight": 15,
+            "position": 4,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v1.1:objective:5.3",
+                "number": "5.3",
+                "title": "Configure device access control using local passwords",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:device-hardening",
+                    "slug": "device-hardening",
+                    "title": "Device hardening",
+                    "description": null,
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:5.5",
+                "number": "5.5",
+                "title": "Describe remote access and site-to-site VPNs",
+                "isPlaceholder": true,
+                "position": 1,
+                "concepts": [],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:5.7",
+                "number": "5.7",
+                "title": "Configure and verify access control lists",
+                "isPlaceholder": true,
+                "position": 2,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:acl",
+                    "slug": "acl",
+                    "title": "Access Control Lists",
+                    "description": "Filtering traffic by rules.",
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v1.1:domain:6",
+            "number": "6",
+            "title": "Automation and Programmability",
+            "weight": 10,
+            "position": 5,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v1.1:objective:6.1",
+                "number": "6.1",
+                "title": "Explain how automation impacts network management",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": []
+              },
+              {
+                "id": "ccna:200-301 v1.1:objective:6.4",
+                "number": "6.4",
+                "title": "Interpret JSON-encoded data",
+                "isPlaceholder": true,
+                "position": 1,
+                "concepts": [
+                  {
+                    "id": "ccna:200-301 v1.1:concept:json-basics",
+                    "slug": "json-basics",
+                    "title": "JSON encoding",
+                    "description": null,
+                    "isPlaceholder": false,
+                    "position": 0
+                  }
+                ],
+                "subObjectives": []
+              }
+            ]
+          }
+        ],
+        "dependencies": [
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:ipv4-addressing",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:binary-math",
+            "conceptSlug": "ipv4-addressing",
+            "prerequisiteSlug": "binary-math"
+          },
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:subnet-mask",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:ipv4-addressing",
+            "conceptSlug": "subnet-mask",
+            "prerequisiteSlug": "ipv4-addressing"
+          },
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:subnetting",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:subnet-mask",
+            "conceptSlug": "subnetting",
+            "prerequisiteSlug": "subnet-mask"
+          },
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:vlsm",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:subnetting",
+            "conceptSlug": "vlsm",
+            "prerequisiteSlug": "subnetting"
+          },
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:trunking",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:vlan",
+            "conceptSlug": "trunking",
+            "prerequisiteSlug": "vlan"
+          },
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:stp",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:vlan",
+            "conceptSlug": "stp",
+            "prerequisiteSlug": "vlan"
+          },
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:etherchannel",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:trunking",
+            "conceptSlug": "etherchannel",
+            "prerequisiteSlug": "trunking"
+          },
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:ospf",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:subnetting",
+            "conceptSlug": "ospf",
+            "prerequisiteSlug": "subnetting"
+          },
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:route-selection",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:ospf",
+            "conceptSlug": "route-selection",
+            "prerequisiteSlug": "ospf"
+          },
+          {
+            "conceptId": "ccna:200-301 v1.1:concept:route-selection",
+            "prerequisiteId": "ccna:200-301 v1.1:concept:static-routing",
+            "conceptSlug": "route-selection",
+            "prerequisiteSlug": "static-routing"
+          }
+        ]
+      },
+      {
+        "id": "ccna:200-301 v2.0",
+        "code": "200-301 v2.0",
+        "name": "CCNA 200-301 v2.0",
+        "isActive": false,
+        "counts": {
+          "domains": 6,
+          "objectives": 6,
+          "subObjectives": 0,
+          "concepts": 0,
+          "dependencies": 0
+        },
+        "domains": [
+          {
+            "id": "ccna:200-301 v2.0:domain:1",
+            "number": "1",
+            "title": "Network Fundamentals",
+            "weight": 20,
+            "position": 0,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v2.0:objective:1.x",
+                "number": "1.x",
+                "title": "PLACEHOLDER — Network Fundamentals objectives (pending official v2.0 blueprint)",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v2.0:domain:2",
+            "number": "2",
+            "title": "Network Access",
+            "weight": 20,
+            "position": 1,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v2.0:objective:2.x",
+                "number": "2.x",
+                "title": "PLACEHOLDER — Network Access objectives (pending official v2.0 blueprint)",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v2.0:domain:3",
+            "number": "3",
+            "title": "IP Connectivity",
+            "weight": 25,
+            "position": 2,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v2.0:objective:3.x",
+                "number": "3.x",
+                "title": "PLACEHOLDER — IP Connectivity objectives (pending official v2.0 blueprint)",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v2.0:domain:4",
+            "number": "4",
+            "title": "IP Services",
+            "weight": 10,
+            "position": 3,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v2.0:objective:4.x",
+                "number": "4.x",
+                "title": "PLACEHOLDER — IP Services objectives (pending official v2.0 blueprint)",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v2.0:domain:5",
+            "number": "5",
+            "title": "Security Fundamentals",
+            "weight": 15,
+            "position": 4,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v2.0:objective:5.x",
+                "number": "5.x",
+                "title": "PLACEHOLDER — Security Fundamentals objectives (pending official v2.0 blueprint)",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": []
+              }
+            ]
+          },
+          {
+            "id": "ccna:200-301 v2.0:domain:6",
+            "number": "6",
+            "title": "Automation and Programmability",
+            "weight": 10,
+            "position": 5,
+            "objectives": [
+              {
+                "id": "ccna:200-301 v2.0:objective:6.x",
+                "number": "6.x",
+                "title": "PLACEHOLDER — Automation and Programmability objectives (pending official v2.0 blueprint)",
+                "isPlaceholder": true,
+                "position": 0,
+                "concepts": [],
+                "subObjectives": []
+              }
+            ]
+          }
+        ],
+        "dependencies": []
+      }
+    ]
+  },
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "sourceRevision": "a76021c7721fa6d73276b6d17da563bcb05d8ff2"
+}

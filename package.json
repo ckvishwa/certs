@@ -16,7 +16,8 @@
     "db:link": "npx --yes supabase link",
     "db:push": "npx --yes supabase db push",
     "db:seed": "node --env-file=.env.local scripts/seed.mts",
-    "db:types": "npx --yes supabase gen types typescript --linked --schema public > lib/types/database.generated.ts"
+    "db:types": "npx --yes supabase gen types typescript --linked --schema public > lib/types/database.generated.ts",
+    "export:mobile-curriculum": "node scripts/export-mobile-curriculum.mts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.110.0",
