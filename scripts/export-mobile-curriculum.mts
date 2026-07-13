@@ -1,11 +1,15 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { execFileSync } from "node:child_process";
 import { buildMobileCurriculum } from "../lib/mobile/curriculum.ts";
 
 const output = resolve(import.meta.dirname, "../mobile_exports");
-const generatedAt = new Date(Number(process.env.SOURCE_DATE_EPOCH ?? 0) * 1000).toISOString();
-const sourceRevision = process.env.MOBILE_EXPORT_SOURCE_REVISION ?? execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+const generatedAt = new Date(
+  Number(process.env.SOURCE_DATE_EPOCH ?? 0) * 1000,
+).toISOString();
+// A checked-in offline artifact must regenerate identically from its source
+// tree. Callers that produce a release artifact can pin a revision explicitly.
+const sourceRevision =
+  process.env.MOBILE_EXPORT_SOURCE_REVISION ?? "unversioned-source";
 
 await mkdir(output, { recursive: true });
 for (const slug of ["security-plus-sy0-701", "ccna"]) {
