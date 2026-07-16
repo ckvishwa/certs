@@ -18,7 +18,8 @@
     "db:seed": "node --env-file=.env.local scripts/seed.mts",
     "db:types": "npx --yes supabase gen types typescript --linked --schema public > lib/types/database.generated.ts",
     "export:mobile-curriculum": "node scripts/export-mobile-curriculum.mts",
-    "verify:mobile-production": "node scripts/verify-mobile-production.mjs"
+    "verify:mobile-production": "node scripts/verify-mobile-production.mjs",
+    "reva:create-enrollment-code": "node --env-file=.env.local scripts/create-reva-enrollment-code.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.110.0",
